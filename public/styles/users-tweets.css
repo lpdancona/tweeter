@@ -1,0 +1,15 @@
+.users-tweet {
+  border: thick, brown;
+  background-color: #f4f1ec;
+  background-image: none;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.user-tweet-header {
+}
+.username {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
