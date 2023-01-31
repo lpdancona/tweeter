@@ -17,7 +17,7 @@
   border-right: none;
   border-left: none;
   background-color: #f4f1ec;
-  border-bottom-width: thick;
+  border-bottom-width: 4px;
 }
 .counter-bottom {
   margin-top: 15px;

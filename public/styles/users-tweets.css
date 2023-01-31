@@ -1,15 +1,37 @@
 .users-tweet {
-  border: thick, brown;
+  border: 4px solid #767676;
   background-color: #f4f1ec;
   background-image: none;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 60px;
 }
 .user-tweet-header {
+  background-image: none;
+  background-color: #f4f1ec;
+  display: flex;
+}
+.Darth-Vader {
+  height: 40px;
+  width: 40px;
 }
 .username {
+}
+.user-tweet-footer {
+  border-top: 4px solid #767676;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  font-size: x-small;
+}
+.symbols {
+  color: #4056a1;
+}
+.symbols i {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.symbols i:hover {
+  color: #dec20b;
 }
