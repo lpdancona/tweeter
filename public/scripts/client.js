@@ -5,9 +5,10 @@
  */
 const renderTweets = function (tweets) {
   // loops through tweets
+  $(".tweet-container").empty();
   for (let obj of tweets) {
     const $tweet = createTweetElement(obj);
-    $(".tweet-container").append($tweet);
+    $(".tweet-container").prepend($tweet);
   }
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
@@ -23,18 +24,14 @@ const createTweetElement = function (obj) {
       </div>
       <p class="userId">${obj.user.handle}</p>
     </div>
-        </i> 
         <p class="info-avatar">${obj.content.text}</p>
       </header>
       <div class="line"></div>
       <footer class="user-tweet-footer">
-        <p>${obj.created_at}</p>
-        <!-- flag -->
+        <p>${timeago.format(obj.created_at)}</p>
         <div class="symbols">
   <i class="fa-solid fa-flag"></i>
-  <!-- retweet -->
   <i class="fa-solid fa-retweet"></i>
-  <!-- hearth -->
   <i class="fa-solid fa-heart"></i>
 </div>
       </footer>
@@ -42,31 +39,34 @@ const createTweetElement = function (obj) {
   `;
   return $tweet;
 };
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
 $(document).ready(function () {
   console.log("ready!");
-  renderTweets(data);
+  loadTweets();
+  $("#create-tweet").on("submit", submit);
 });
+const loadTweets = function () {
+  $.ajax({
+    dataType: "json",
+    url: "http://localhost:8080/tweets",
+    success: function (returnData) {
+      console.log("success tweet fetched", returnData);
+      renderTweets(returnData);
+    },
+  });
+};
+const submit = function (event) {
+  console.log("iuehviue");
+  event.preventDefault();
+  const data = {
+    text: $("#tweet-text").serialize(),
+  };
+  $.ajax({
+    type: "POST",
+    url: "/tweets/",
+    data: $("#tweet-text").serialize(),
+    success: function (returnData) {
+      console.log("success tweet posted", returnData);
+      loadTweets();
+    },
+  });
+};

@@ -45,7 +45,7 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script src="jquery-3.6.1.min.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
 
   <body>
@@ -71,8 +71,8 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
-          <textarea name="tweet-text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <form method="POST" action="/tweets/" id="create-tweet">
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         </div>
           <div class="counter-bottom">
             <button class="tweet-button" type="submit">Tweet</button>
@@ -83,7 +83,5 @@
       </section>
     </main>
     <section class="tweet-container"></section>
-    </article> -->
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus assumenda voluptatem porro et ullam laudantium consectetur corrupti culpa illum nemo similique tempora ipsam, itaque quos, ipsum error velit nulla numquam!</p>
   </body>
 </html>
