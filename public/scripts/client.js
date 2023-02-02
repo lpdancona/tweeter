@@ -57,11 +57,14 @@ const loadTweets = function () {
 
 const submit = function (event) {
   event.preventDefault();
+  $("#error").hide();
   if ($(this).find("textarea").val() == "") {
-    return alert("form is empty");
+    return $("#error").text("The textarea is empty!").show();
   }
   if ($(this).find(".counter").val() < 0) {
-    return alert("the tweet excceds the limit of letters");
+    return $("#error")
+      .text("The tweet excceds the limit of characters!")
+      .show();
   }
   console.log("iuehviue");
   const data = {

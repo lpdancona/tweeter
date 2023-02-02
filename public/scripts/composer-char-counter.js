@@ -1,12 +1,12 @@
 $(document).ready(function () {
   console.log("Hello Client");
-  $(".new-tweet").keypress(function () {
-    const textLength = $(this).find("textarea").val().length;
-    $(this)
-      .find(".counter")
-      .val(140 - textLength);
+  $("textarea").keyup(function () {
+    const textLength = $(this).val().length;
+    $(".counter").val(140 - textLength);
     if (textLength > 140) {
-      $(this).find(".counter").css({ color: "red" });
+      $(".counter").css({ color: "red" });
+    } else {
+      $(".counter").css({ color: "inherit" });
     }
   });
 });
