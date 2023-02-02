@@ -2,7 +2,7 @@ header {
   background-color: #bacbf5;
   background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
 }
-.header-avatar {
+.avatar-image {
   padding-top: 120px;
   display: flex;
   height: 400px;
@@ -14,4 +14,27 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (min-width: 1024px) {
+  .header {
+    margin: 50px;
+    margin-top: 200px;
+    width: 40%;
+    float: left;
+  }
+
+  .avatar-image {
+    background-color: #bacbf5;
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+    color: #f0f0f0;
+    height: 200px;
+  }
+
+  .header-name {
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+  }
 }
