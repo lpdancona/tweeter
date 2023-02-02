@@ -8,6 +8,11 @@ const renderTweets = function (tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
 };
+const sanitize = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 const createTweetElement = function (obj) {
   let $tweet = `
   <article class="users-tweet">
@@ -19,7 +24,7 @@ const createTweetElement = function (obj) {
       </div>
       <p class="userId">${obj.user.handle}</p>
     </div>
-        <p class="info-avatar">${obj.content.text}</p>
+        <p class="info-avatar">${sanitize(obj.content.text)}</p>
       </header>
       <div class="line"></div>
       <footer class="user-tweet-footer">
@@ -52,7 +57,6 @@ const loadTweets = function () {
 
 const submit = function (event) {
   event.preventDefault();
-  console.log("textareaVal", $(this).find("textarea").val());
   if ($(this).find("textarea").val() == "") {
     return alert("form is empty");
   }
@@ -69,7 +73,14 @@ const submit = function (event) {
     data: $("#tweet-text").serialize(),
     success: function (returnData) {
       console.log("success tweet posted", returnData);
+      $("textarea").val("");
       loadTweets();
     },
   });
 };
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function handleSubmit(event) {
+  event.preventDefault();
+  form.reset();
+});
