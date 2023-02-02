@@ -44,8 +44,16 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script src="jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
 
   <body>
@@ -57,32 +65,41 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-    <header class="header">
-      <div class="avatar-image">
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div class="header-name">
-        <h2>Leo</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <p id="error">the textarea is empty.</p>
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/" id="create-tweet">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+    <div class="header-main">
+      <header class="header">
+        <div class="avatar-image">
+          <img src="/images/profile-hex.png" />
         </div>
-          <div class="counter-bottom">
-            <button class="tweet-button" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-        <!-- creating container to display users tweets -->
-      </section>
-    </main>
-    <section class="tweet-container"></section>
+        <br />
+        <div class="header-name">
+          <h2>Leo</h2>
+        </div>
+      </header>
+
+      <!-- Page-specific (main) content here -->
+      <div class="main-body">
+        <main class="container">
+          <section class="new-tweet">
+            <p id="error">the textarea is empty.</p>
+            <h2>Compose Tweet</h2>
+            <form method="POST" action="/tweets/" id="create-tweet">
+              <textarea
+                name="text"
+                id="tweet-text"
+                placeholder="What are you humming about?"
+              ></textarea>
+              <div class="counter-bottom">
+                <button class="tweet-button" type="submit">Tweet</button>
+                <output name="counter" class="counter" for="tweet-text"
+                  >140</output
+                >
+              </div>
+            </form>
+            <!-- creating container to display users tweets -->
+          </section>
+        </main>
+        <section class="tweet-container"></section>
+      </div>
+    </div>
   </body>
 </html>

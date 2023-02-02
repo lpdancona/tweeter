@@ -1,13 +1,13 @@
 const renderTweets = function (tweets) {
   // loops through tweets
+  // calls createTweetElement for each tweet
   $(".tweet-container").empty();
   for (let obj of tweets) {
     const $tweet = createTweetElement(obj);
     $(".tweet-container").prepend($tweet);
   }
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
 };
+//
 const sanitize = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -66,7 +66,6 @@ const submit = function (event) {
       .text("The tweet excceds the limit of characters!")
       .show();
   }
-  console.log("iuehviue");
   const data = {
     text: $("#tweet-text").serialize(),
   };

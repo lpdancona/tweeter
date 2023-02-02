@@ -29,3 +29,9 @@
 .navbar-heading i {
   color: red;
 }
+/* Responsive design */
+@media only screen and (max-width: 1024px) {
+  .navbar {
+    background-color: transparent;
+  }
+}
