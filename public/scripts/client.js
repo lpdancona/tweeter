@@ -1,8 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 const renderTweets = function (tweets) {
   // loops through tweets
   $(".tweet-container").empty();
@@ -54,9 +49,17 @@ const loadTweets = function () {
     },
   });
 };
+
 const submit = function (event) {
-  console.log("iuehviue");
   event.preventDefault();
+  console.log("textareaVal", $(this).find("textarea").val());
+  if ($(this).find("textarea").val() == "") {
+    return alert("form is empty");
+  }
+  if ($(this).find(".counter").val() < 0) {
+    return alert("the tweet excceds the limit of letters");
+  }
+  console.log("iuehviue");
   const data = {
     text: $("#tweet-text").serialize(),
   };
