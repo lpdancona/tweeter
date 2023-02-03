@@ -7,7 +7,7 @@ const renderTweets = function (tweets) {
     $(".tweet-container").prepend($tweet);
   }
 };
-//
+
 const sanitize = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -44,6 +44,7 @@ $(document).ready(function () {
   loadTweets();
   $("#create-tweet").on("submit", submit);
 });
+// get route with ajax
 const loadTweets = function () {
   $.ajax({
     dataType: "json",
@@ -69,6 +70,7 @@ const submit = function (event) {
   const data = {
     text: $("#tweet-text").serialize(),
   };
+  // Post route with ajax
   $.ajax({
     type: "POST",
     url: "/tweets/",
