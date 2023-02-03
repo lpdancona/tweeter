@@ -4,9 +4,9 @@ Tweeter is a full stack web application that allows users to tweet their emotion
 
 ## Final Product
 
-!["enjoy our tweet box and tell the word how you feel"]()
-!["enjoy it on a big screen"]()
-!["enjoy it on a small screen if you want to"]()
+!["enjoy our tweet box and tell the word how you feel"](https://github.com/lpdancona/tweeter/blob/master/docs/tweet-box.png?raw=true)
+!["enjoy it on a big screen"](https://github.com/lpdancona/tweeter/blob/master/docs/big-screen.png?raw=true)
+!["enjoy it on a small screen if you want to"](https://github.com/lpdancona/tweeter/blob/master/docs/small-screen.png?raw=true)
 
 ## Dependencies
 
