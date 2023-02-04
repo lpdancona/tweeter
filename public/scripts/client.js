@@ -80,6 +80,9 @@ const submit = function (event) {
       $("textarea").val("");
       loadTweets();
     },
+    error: function (result) {
+      alert("Something went wrong");
+    },
   });
 };
 const form = document.getElementById("form");
