@@ -7,7 +7,7 @@ const renderTweets = function (tweets) {
     $(".tweet-container").prepend($tweet);
   }
 };
-
+// sanitize does not allow users to add code through textareas
 const sanitize = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -67,9 +67,6 @@ const submit = function (event) {
       .text("The tweet excceds the limit of characters!")
       .show();
   }
-  const data = {
-    text: $("#tweet-text").serialize(),
-  };
   // Post route with ajax
   $.ajax({
     type: "POST",
@@ -78,6 +75,7 @@ const submit = function (event) {
     success: function (returnData) {
       console.log("success tweet posted", returnData);
       $("textarea").val("");
+      $("output").val("140");
       loadTweets();
     },
     error: function (result) {
