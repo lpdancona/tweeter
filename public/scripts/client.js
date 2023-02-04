@@ -48,7 +48,7 @@ $(document).ready(function () {
 const loadTweets = function () {
   $.ajax({
     dataType: "json",
-    url: "http://localhost:8080/tweets",
+    url: "/tweets/",
     success: function (returnData) {
       console.log("success tweet fetched", returnData);
       renderTweets(returnData);
