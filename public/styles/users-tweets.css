@@ -43,6 +43,7 @@
 .info-avatar {
   padding-left: 15px;
   color: rgb(86 81 73);
+  word-wrap: break-word;
 }
 .user-tweet-footer {
   display: flex;
